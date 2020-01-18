@@ -1,3 +1,10 @@
+/*
+**
+** saas.sql 
+**
+** Schemas as a service in Oracle database 
+**
+*/
 set echo on
 create user syssa identified by syssa;
 grant create session to syssa with admin option;
