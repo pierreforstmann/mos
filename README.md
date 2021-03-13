@@ -27,7 +27,8 @@ Here are the specifications of schemas as a service (SAAS):
 4. SAAS must only work for a database using Oracle Managed Files (OMF)
 5. the schema name must start with U letter (in order to avoid any problem with Oracle provided schemas)
 6. the Oracle user using SAAS must not be granted DBA role or any system privilege but only execution of the SAAS PL/SQL package.
-Design
+
+## Design
 
 Two user accounts need to be created:
 
@@ -38,7 +39,8 @@ It must also be granted the privileges to be granted to the user account that it
 This account owns elevated privileges and must be managed like a DBA account (ie its password must be restricted to DBA team).
 
 2. SADM: this is the account that must be used by SAAS user: this account will only granted execution privilege on the SAAS package owned by SYSSA.
-Setup
+
+## Setup
 
 I will use a 12.1.0.2 database but I could have used a 9.2 database with OMF (or even a 7.3 database without using OMF).
 
