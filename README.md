@@ -36,9 +36,9 @@ Two user accounts need to be created:
 
 It must also be granted the privileges to be granted to the user account that it will create. It will also own the SAAS package.
 
-This account owns elevated privileges and must be managed like a DBA account (ie its password must be restricted to DBA team).
+This account owns elevated privileges and must be managed like a DBA account (i.e. its password must be restricted to DBA team).
 
-2. SADM: this is the account that must be used by SAAS user: this account will only granted execution privilege on the SAAS package owned by SYSSA.
+2. SADM: this is the account that must be used by SAAS user: this account will only be granted execution privilege on the SAAS package owned by SYSSA.
 
 ## Setup
 
