@@ -100,7 +100,7 @@ Now you can connect without giving user account and password:
 
     OPS$ORACLE@DB12>
 
-    Creating SYSSA account:
+  ### Creating SYSSA account:
 
     OPS$ORACLE@DB12>create user syssa identified by syssa;
 
