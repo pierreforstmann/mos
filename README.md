@@ -223,7 +223,7 @@ The SCHEMA_ADMIN package implements the SAAS code with 2 self explanatory proced
     SYSSA@DB12>show errors
     No errors.
 
-The log procedure implements some code instrumention with DBMS_OUTPUT package to check what SQL statements are run.
+The log procedure implements some code instrumentation with DBMS_OUTPUT package to check what SQL statements are run.
 
 ### Creating the SADM account
 
