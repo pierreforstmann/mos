@@ -1,4 +1,4 @@
---  ALTER TABLE DROP COLUMNS CHECKPOINT 10000 does not start from the beginning and starts where previous run has stopped 
+-- ALTER TABLE DROP COLUMNS CHECKPOINT 10000 does not start from the beginning and starts where previous run has stopped 
 -- example with Oracle 10.2.0.4 database
 
 SQL> create table t(x int, y int);
