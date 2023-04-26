@@ -7,4 +7,7 @@ Here are some SQL scripts that I have first published on OTN forums using follow
 <a href=https://community.oracle.com/tech/developers/profile/discussions/Pierre%20Forstmann>PF</a>
 <br>
 
+## Oracle links
+
+<a href=https://download.oracle.com/ocomdocs/global/Application_Programming_Using_Pooling.pdf>Application Programming Using Pooling</a>
 
