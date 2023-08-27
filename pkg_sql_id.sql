@@ -142,7 +142,7 @@ begin
 --
  select sql_text into v_st 
  from sys.v_$sql 
- where sql_id = p_sql_id and parsing_schema_name = upper(p_ownname) and child_number = p_child_number;
+ where sql_id = p_sql_id and child_number = p_child_number;
 -- 
  dbms_sql.parse(v_cn, v_st, dbms_sql.native);
 --
