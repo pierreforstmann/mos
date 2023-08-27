@@ -1,5 +1,5 @@
 --
--- test_exec_sql.sql
+-- test_pkg_sql_id.sql
 --
 set echo on
 show con_name
