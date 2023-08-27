@@ -41,19 +41,19 @@ is
  function get_bind_value(p_sql_id varchar2, 
 			 p_child_number int, 
 			 p_bind_var_index int)
- return varchar2
+ return anydata 
  is
- v_value_string sys.v_$sql_bind_capture.value_string%type;
+ v_value sys.v_$sql_bind_capture.value_anydata%type;
  begin
  --
  -- only 1 bind value for (sql_id, child_number, position) even if multiple executions
  --
-   select value_string into v_value_string
+   select value_anydata into v_value
    from  sys.v_$sql_bind_capture sbc
    where sbc.sql_id = p_sql_id 
    and sbc.child_number = p_child_number
    and sbc.position = p_bind_var_index;
- return v_value_string;
+ return v_value;
  end;
 --
 --
@@ -117,8 +117,8 @@ v_name varchar2(30);
 v_type integer;
 v_number number;
 v_date date;
-v_varchar varchar2(128);
-v_value_string sys.v_$sql_bind_capture.value_string%type;
+v_varchar2 varchar2(4000);
+v_value sys.v_$sql_bind_capture.value_anydata%type;
 begin
  execute immediate('alter session set current_schema=' || p_ownname);
  dbms_output.put_line('INFO: alter session set current_schema=' || p_ownname || ' OK.');
@@ -149,9 +149,19 @@ begin
   -- type 2 = number
   -- type 12 = date
    log('INFO: binding ' || v_name || ' ...');
-   v_value_string:= get_bind_value( p_sql_id, p_child_number, v_pos);
-   log('INFO: ... value ' || v_value_string || ' ...');
-   dbms_sql.bind_variable(v_cn, v_name, v_value_string);
+   v_value := get_bind_value( p_sql_id, p_child_number, v_pos);
+   case v_type 
+    when 1 then
+     v_varchar2 := SYS.ANYDATA.accessVarchar2(v_value);
+     dbms_sql.bind_variable(v_cn, v_name, v_varchar2);
+    when 2 then
+     v_number := SYS.ANYDATA.accessNumber(v_value);
+     dbms_sql.bind_variable(v_cn, v_name, v_number);
+    when 12 then
+     v_date := SYS.ANYDATA.accessDate(v_value);
+     dbms_sql.bind_variable(v_cn, v_name, v_date);
+    else log('ERROR: unexpected datatype: ' || v_type);
+   end case;
    log('INFO:  ... done.' );
  end loop;
 --
