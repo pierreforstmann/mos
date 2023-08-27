@@ -38,11 +38,27 @@ is
  end;
 --
 --
+ function get_bind_value(p_sql_id varchar2, 
+			 p_child_number int, 
+			 p_bind_var_index int)
+ return varchar2
+ is
+ v_value_string sys.v_$sql_bind_capture.value_string%type;
+ begin
+ --
+ -- only 1 bind value for (sql_id, child_number, position) even if multiple executions
+ --
+   select value_string into v_value_string
+   from  sys.v_$sql_bind_capture sbc
+   where sbc.sql_id = p_sql_id 
+   and sbc.child_number = p_child_number
+   and sbc.position = p_bind_var_index;
+ return v_value_string;
+ end;
+--
+--
  procedure display(p_sql_id varchar2) is
- v_st sys.v_$sql.sql_text%type;
- v_schema sys.v_$sql.parsing_schema_name%type;
- v_child_number sys.v_$sql.child_number%type;
- v_found boolean := false;
+ v_sql_id_found boolean := false;
  v_nb_params int;
  begin
   for c in (
@@ -50,12 +66,12 @@ is
    from sys.v_$sql 
    where sql_id = p_sql_id)
    loop
-    v_found := true;
+    v_sql_id_found := true;
     log('parsing_schema: ' || c.parsing_schema_name || ' child_number: ' 
 	|| c.child_number || ' text: ' || c.sql_text);
    end loop;
    --
-   if (not v_found)
+   if (not v_sql_id_found)
    then
         log('ERROR: sql_id: ' || p_sql_id || ' not found.');
 	return; 
@@ -73,7 +89,7 @@ is
  end loop;
  --
  for b in (
-   select hash_value, sql_id, child_number, position, name, datatype
+   select hash_value, sql_id, child_number, position, name, datatype, value_string
    from  sys.v_$sql_bind_capture sbc
    where sbc.sql_id = p_sql_id
    order by hash_value, sql_id, child_number, position
@@ -82,9 +98,9 @@ is
    log('hash_value: ' || b.hash_value || ' sql_id: ' || b.sql_id || 
        ' child_number: ' || b.child_number || 
        ' position: ' || b.position || ' name: ' || b.name || ' datatype: ' || 
-       b.datatype); 
+       b.datatype || ' value: ' || b.value_string); 
  end loop;
-
+ --
  end;
 --
 --
@@ -102,6 +118,7 @@ v_type integer;
 v_number number;
 v_date date;
 v_varchar varchar2(128);
+v_value_string sys.v_$sql_bind_capture.value_string%type;
 begin
  execute immediate('alter session set current_schema=' || p_ownname);
  dbms_output.put_line('INFO: alter session set current_schema=' || p_ownname || ' OK.');
@@ -118,8 +135,8 @@ begin
  from sys.v_$sql_bind_capture sbc
  where sbc.sql_id = p_sql_id 
  and child_number = p_child_number;
- dbms_output.put_line('INFO: SQL_ID: ' || p_sql_id || ' child_number: ' || p_child_number 
-	               || ' has ' || v_nb || ' parameters.');
+ log('INFO: SQL_ID: ' || p_sql_id || ' child_number: ' || p_child_number 
+     || ' has ' || v_nb || ' parameters.');
  for idx in 1 .. v_nb
  loop
   select position, name, datatype
@@ -127,30 +144,20 @@ begin
   from  sys.v_$sql_bind_capture sbc
   where sbc.sql_id = p_sql_id
   and position = idx
-  and child_number = 0;
-  if (v_type = 1)
-  then
-   dbms_output.put_line('INFO: binding ' || v_name || ' ...');
-   dbms_sql.bind_variable(v_cn, v_name, 'OK');
-   dbms_output.put_line('INFO:  ... done.' );
-  end if;
-  if (v_type = 2)
-  then
-   dbms_output.put_line('INFO: binding ' || v_name || ' ...');
-   dbms_sql.bind_variable(v_cn, v_name, 0);
-   dbms_output.put_line('INFO:  ... done.' );
-  end if;
-  if (v_type = 12)
-  then
-   dbms_output.put_line('INFO: binding ' || v_name || ' ...');
-   dbms_sql.bind_variable(v_cn, v_name, sysdate);
-   dbms_output.put_line('INFO:  ... done.' );
-  end if;
+  and child_number = p_child_number;
+  -- type 1 = varchar2
+  -- type 2 = number
+  -- type 12 = date
+   log('INFO: binding ' || v_name || ' ...');
+   v_value_string:= get_bind_value( p_sql_id, p_child_number, v_pos);
+   log('INFO: ... value ' || v_value_string || ' ...');
+   dbms_sql.bind_variable(v_cn, v_name, v_value_string);
+   log('INFO:  ... done.' );
  end loop;
 --
- dbms_output.put_line('INFO: executing: ' || v_st || ' ...');
+ log('INFO: executing: ' || v_st || ' ...');
  v_rp := dbms_sql.execute(v_cn);
- dbms_output.put_line('INFO: ... done.');
+ log('INFO: ... done.');
 --
  dbms_sql.close_cursor(v_cn);
 --
@@ -158,10 +165,10 @@ exception
      --
  when ORA1008_detected then
      begin
-      dbms_output.put_line('WARNING: ORA-1008 detected.');
+      log('WARNING: ORA-1008 detected.');
      end;
  when others then
-     dbms_output.put_line('ERROR: unexpected exception ' || SQLCODE || ':' || SQLERRM);
+     log('ERROR: unexpected exception: sqlcode: ' || SQLCODE || ' message: ' || SQLERRM);
      dbms_sql.close_cursor(v_cn);
      raise;
 --
