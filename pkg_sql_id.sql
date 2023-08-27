@@ -22,7 +22,10 @@ create or replace package sql_id
 --
 is
  procedure display(p_sql_id varchar2);
- procedure execute(p_ownname varchar2, p_sql_id varchar2, p_child_number int default 0);
+ procedure execute(p_ownname varchar2, 
+	           p_sql_id varchar2, 
+		   p_child_number int default 0,
+	           p_use_default_values boolean default false);
 end;
 /
 show errors
@@ -43,16 +46,24 @@ is
 			 p_bind_var_index int)
  return anydata 
  is
+ v_max_last date; 
  v_value sys.v_$sql_bind_capture.value_anydata%type;
  begin
  --
- -- only 1 bind value for (sql_id, child_number, position) even if multiple executions
+ -- bind variable values are captured every 15 minutes
  --
-   select value_anydata into v_value
+   select max(last_captured) into v_max_last 
    from  sys.v_$sql_bind_capture sbc
    where sbc.sql_id = p_sql_id 
    and sbc.child_number = p_child_number
    and sbc.position = p_bind_var_index;
+ -- 
+   select value_anydata into v_value
+   from  sys.v_$sql_bind_capture sbc
+   where sbc.sql_id = p_sql_id 
+   and sbc.child_number = p_child_number
+   and sbc.position = p_bind_var_index
+   and last_captured = v_max_last;
  return v_value;
  end;
 --
@@ -104,7 +115,11 @@ is
  end;
 --
 --
- procedure execute(p_ownname varchar2, p_sql_id varchar2, p_child_number int default 0) is
+ procedure execute(p_ownname varchar2, 
+	           p_sql_id varchar2, 
+		   p_child_number int default 0,
+	           p_use_default_values boolean default false) 
+	           is
 --
 ORA1008_detected EXCEPTION;
 PRAGMA EXCEPTION_INIT(ORA1008_detected, -1008);
@@ -149,19 +164,35 @@ begin
   -- type 2 = number
   -- type 12 = date
    log('INFO: binding ' || v_name || ' ...');
-   v_value := get_bind_value( p_sql_id, p_child_number, v_pos);
-   case v_type 
-    when 1 then
-     v_varchar2 := SYS.ANYDATA.accessVarchar2(v_value);
-     dbms_sql.bind_variable(v_cn, v_name, v_varchar2);
-    when 2 then
-     v_number := SYS.ANYDATA.accessNumber(v_value);
-     dbms_sql.bind_variable(v_cn, v_name, v_number);
-    when 12 then
-     v_date := SYS.ANYDATA.accessDate(v_value);
-     dbms_sql.bind_variable(v_cn, v_name, v_date);
-    else log('ERROR: unexpected datatype: ' || v_type);
-   end case;
+   if (not p_use_default_values)
+   then
+    v_value := get_bind_value( p_sql_id, p_child_number, v_pos);
+    case v_type 
+     when 1 then
+      v_varchar2 := SYS.ANYDATA.accessVarchar2(v_value);
+      dbms_sql.bind_variable(v_cn, v_name, v_varchar2);
+     when 2 then
+      v_number := SYS.ANYDATA.accessNumber(v_value);
+      dbms_sql.bind_variable(v_cn, v_name, v_number);
+     when 12 then
+      v_date := SYS.ANYDATA.accessDate(v_value);
+      dbms_sql.bind_variable(v_cn, v_name, v_date);
+     else log('ERROR: unexpected datatype: ' || v_type);
+    end case;
+   else
+    case v_type 
+     when 1 then
+      v_varchar2 := 'ZERO';
+      dbms_sql.bind_variable(v_cn, v_name, v_varchar2);
+     when 2 then
+      v_number := '0';
+      dbms_sql.bind_variable(v_cn, v_name, v_number);
+     when 12 then
+      v_date := to_date('01/01/1970','DD/MM/YYYY');
+      dbms_sql.bind_variable(v_cn, v_name, v_date);
+     else log('ERROR: unexpected datatype: ' || v_type);
+    end case;
+   end if;
    log('INFO:  ... done.' );
  end loop;
 --
