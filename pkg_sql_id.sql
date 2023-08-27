@@ -22,7 +22,7 @@ create or replace package sql_id
 --
 is
  procedure display(p_sql_id varchar2);
- procedure execute(p_ownname varchar2, p_sql_id varchar2);
+ procedure execute(p_ownname varchar2, p_sql_id varchar2, p_child_number int default 0);
 end;
 /
 show errors
@@ -88,7 +88,7 @@ is
  end;
 --
 --
- procedure execute(p_ownname varchar2, p_sql_id varchar2) is
+ procedure execute(p_ownname varchar2, p_sql_id varchar2, p_child_number int default 0) is
 --
 ORA1008_detected EXCEPTION;
 PRAGMA EXCEPTION_INIT(ORA1008_detected, -1008);
@@ -110,15 +110,16 @@ begin
 --
  select sql_text into v_st 
  from sys.v_$sql 
- where sql_id = p_sql_id and parsing_schema_name = upper(p_ownname) and rownum = 1;
+ where sql_id = p_sql_id and parsing_schema_name = upper(p_ownname) and child_number = p_child_number;
 -- 
  dbms_sql.parse(v_cn, v_st, dbms_sql.native);
 --
  select count(*) into v_nb 
  from sys.v_$sql_bind_capture sbc
  where sbc.sql_id = p_sql_id 
- and child_number = 0;
- dbms_output.put_line('INFO: found ' || v_nb || ' bind variables for SQL_ID: ' || p_sql_id);
+ and child_number = p_child_number;
+ dbms_output.put_line('INFO: SQL_ID: ' || p_sql_id || ' child_number: ' || p_child_number 
+	               || ' has ' || v_nb || ' parameters.');
  for idx in 1 .. v_nb
  loop
   select position, name, datatype
@@ -127,7 +128,6 @@ begin
   where sbc.sql_id = p_sql_id
   and position = idx
   and child_number = 0;
-  dbms_output.put_line('INFO: variable at position: ' || v_pos || ' is named: ' || v_name || ' and has datatype: ' || v_type);
   if (v_type = 1)
   then
    dbms_output.put_line('INFO: binding ' || v_name || ' ...');
