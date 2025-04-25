@@ -21,6 +21,8 @@ scalability</a>
 ### blogs
 <a href=https://blogs.oracle.com/optimizer/>Oracle Optimizer</a>
 
+<a href=https://blogs.oracle.com/maa/>Maximum Availability Architecture</a>
+
 <a href=https://mikedietrichde.com/>Upgrade your Database - NOW!</a>
 
 <a href=https://dohdatabase.com/>Databases Are Fun</a>
@@ -30,3 +32,6 @@ scalability</a>
 <a href=https://www.ludovicocaldara.net/dba/>DBA survival BLOG - DBA stuff and Oracle Data Guard</a>
 
 <a href=https://gavinsoorma.com.au/>Gavin's Oracle Knowledge Base</a>
+
+<a href=https://houseofbrick.com/blog/>House of Brick</a>
+
