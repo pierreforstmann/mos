@@ -19,6 +19,9 @@ scalability</a>
 <a href=https://www.oracle.com/technetwork/database/manageability/ps-s003-274003-106-1-fin-v2-128827.pdf>Understanding Shared Pool Memory Structures</a>
 
 ### blogs
+
+<a href=https://blogs.oracle.com/database/>Oracle Database <a/>
+
 <a href=https://blogs.oracle.com/optimizer/>Oracle Optimizer</a>
 
 <a href=https://blogs.oracle.com/maa/>Maximum Availability Architecture</a>
