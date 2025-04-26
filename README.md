@@ -9,6 +9,9 @@ Here are some SQL scripts that I have first published on OTN forums using follow
 
 ## Oracle links
 
+### guides
+<a href=https://docs.oracle.com/en/database/oracle/oracle-database/19/adfns/database-development-guide.pdf>Database Development Guide</a>
+
 ### white papers
 
 <a href=https://download.oracle.com/ocomdocs/global/Application_Programming_Using_Pooling.pdf>Application Programming Using Pooling</a>
