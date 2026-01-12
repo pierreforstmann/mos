@@ -31,7 +31,7 @@ scalability</a>
 
 <a href=https://mikedietrichde.com/>Upgrade your Database - NOW!</a>
 
-<a href=https://dohdatabase.com/>Databases Are Fun</a>
+<a href=https://dohdatabase.com/>Databases Are Fun</a> 
 
 <a href=https://www.dbarj.com.br>DBA - Rodrigo Jorge - Oracle Tips and Guides</a>
 
@@ -43,3 +43,10 @@ scalability</a>
 
 <a href=https://houseofbrick.com/blog/>House of Brick</a>
 
+### blog posts
+
+<a href=https://database-heartbeat.com/2023/04/18/create-service-ha/>How to create Oracle Database Services for High Availability</a>
+
+<a href=https://dohdatabase.com/2025/01/23/patch-me-if-you-can/>Patch Me If You Can</a>
+  
+<a href=https://dohdatabase.com/2025/03/25/patch-dg/>Introduction to Patching Oracle Data Guard<a/>
