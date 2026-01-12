@@ -37,6 +37,8 @@ scalability</a>
 
 <a href=https://www.ludovicocaldara.net/dba/>DBA survival BLOG - DBA stuff and Oracle Data Guard</a>
 
+<a href=https://database-heartbeat.com/>database-heartbeat.com: Oracle Database and Cloud Technologies</a>
+
 <a href=https://gavinsoorma.com.au/>Gavin's Oracle Knowledge Base</a>
 
 <a href=https://houseofbrick.com/blog/>House of Brick</a>
