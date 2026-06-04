@@ -23,6 +23,10 @@ scalability</a>
 
 <a href=https://www.oracle.com/technetwork/database/performance/statspack-opm4-134117.pdf> Diagnosing Performance Bottlenecks Using Statspack And The Oracle Performance Method
 
+### Critical Patch Updates, Security Alerts and Bulletins
+
+<a href=https://www.oracle.com/security-alerts/#CriticalPatchUpdates>Critical Patch Updates</a>
+
 ### blogs
 <a href=https://blogs.oracle.com/coretec/>Database & Cloud Technology Blog</a>
 
