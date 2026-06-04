@@ -84,6 +84,8 @@ scalability</a>
 
 <a href=https://aws.amazon.com/fr/blogs/database/implementing-table-partitioning-in-oracle-standard-edition-part-2/>Implementing table partitioning in Oracle Standard Edition: Part 2</a>
 
+<a href=https://github.com/oehrlis/oradba>oradba - Oracle Database Administration Toolset</a>
+
 ## MySQL Links
 
 <a href=https://blogs.oracle.com/mysql/why-your-application-should-not-use-one-mysql-user-for-everything>Why Your Application Should Not Use One MySQL User for Everything
