@@ -72,6 +72,10 @@ scalability</a>
 
 <a href=https://blogs.oracle.com/optimizer/adding-and-disabling-hints-using-sql-patch>Adding and Disabling Hits Using SQL Patch</a>
 
+<a href=https://blogs.oracle.com/database/database-performance-tuning>Oracle Database Performance Tuning - 4 Steps to Resolve Issues (AHF) </a>
+
+<a href=https://blogs.oracle.com/coretec/oracle-performance-hub>Performance Hub – the database tuning gem<a/>
+
 <a href=https://www.pythian.com/blog/how-to-create-an-oracle-se2-database-and-avoid-licensing-problems>How To Create an Oracle SE2 Database and Avoid Licensing Problems</a>
 
 <a href=https://houseofbrick.com/blog/the-oracle-database-standard-edition-licensing-trap/>The Oracle Database Standard Edition Licensing Trap</a>
