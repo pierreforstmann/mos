@@ -21,7 +21,10 @@ scalability</a>
 
 <a href=https://www.oracle.com/technetwork/database/manageability/ps-s003-274003-106-1-fin-v2-128827.pdf>Understanding Shared Pool Memory Structures</a>
 
+<a href=https://www.oracle.com/technetwork/database/performance/statspack-opm4-134117.pdf> Diagnosing Performance Bottlenecks Using Statspack And The Oracle Performance Method
+
 ### blogs
+<a href=https://blogs.oracle.com/coretec/>Database & Cloud Technology Blog</a>
 
 <a href=https://blogs.oracle.com/database/>Oracle Database <a/>
 
@@ -50,3 +53,11 @@ scalability</a>
 <a href=https://dohdatabase.com/2025/01/23/patch-me-if-you-can/>Patch Me If You Can</a>
   
 <a href=https://dohdatabase.com/2025/03/25/patch-dg/>Introduction to Patching Oracle Data Guard<a/>
+
+<a href=https://www.pythian.com/blog/how-to-create-an-oracle-se2-database-and-avoid-licensing-problems>How To Create an Oracle SE2 Database and Avoid Licensing Problems</a>
+
+<a href=https://houseofbrick.com/blog/the-oracle-database-standard-edition-licensing-trap/>The Oracle Database Standard Edition Licensing Trap</a>
+
+## MySQL links
+
+<a href=https://blogs.oracle.com/mysql/why-your-application-should-not-use-one-mysql-user-for-everything>Why Your Application Should Not Use One MySQL User for Everything
