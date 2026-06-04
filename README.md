@@ -50,6 +50,8 @@ scalability</a>
 
 <a href=https://houseofbrick.com/blog/>House of Brick</a>
 
+<a href=https://www.oracledaybyday.com/>Oracle DBA Scripts & Database Utilities </a>
+
 ### blog posts
 
 <a href=https://database-heartbeat.com/2023/04/18/create-service-ha/>How to create Oracle Database Services for High Availability</a>
