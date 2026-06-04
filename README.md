@@ -54,6 +54,8 @@ scalability</a>
   
 <a href=https://dohdatabase.com/2025/03/25/patch-dg/>Introduction to Patching Oracle Data Guard<a/>
 
+<a href=https://connor-mcdonald.com/2019/03/04/less-slamming-vsql/>use V$SQLSTAT not V$SQL to find expensive SQL</a>
+
 <a href=https://blogs.oracle.com/optimizer/using-sql-patch-to-add-hints-to-a-packaged-application>Using SQL Patch to add hints to a packaged application</a>
 
 <a href=https://blogs.oracle.com/optimizer/adding-and-disabling-hints-using-sql-patch>Adding and Disabling Hits Using SQL Patch</a>
