@@ -70,7 +70,7 @@ scalability</a>
 
 <a href=https://blogs.oracle.com/optimizer/using-sql-patch-to-add-hints-to-a-packaged-application>Using SQL Patch to add hints to a packaged application</a>
 
-<a href=https://blogs.oracle.com/optimizer/adding-and-disabling-hints-using-sql-patch>Adding and Disabling Hits Using SQL Patch</a>
+<a href=https://blogs.oracle.com/optimizer/adding-and-disabling-hints-using-sql-patch>Adding and Disabling Hints Using SQL Patch</a>
 
 <a href=https://blogs.oracle.com/database/database-performance-tuning>Oracle Database Performance Tuning - 4 Steps to Resolve Issues (AHF) </a>
 
