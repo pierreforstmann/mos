@@ -58,6 +58,10 @@ scalability</a>
 
 <a href=https://houseofbrick.com/blog/the-oracle-database-standard-edition-licensing-trap/>The Oracle Database Standard Edition Licensing Trap</a>
 
+<a href=https://aws.amazon.com/fr/blogs/database/implementing-table-partitioning-in-oracle-standard-edition-part-1/>Implementing table partitioning in Oracle Standard Edition: Part 1</a>
+
+<a href=https://aws.amazon.com/fr/blogs/database/implementing-table-partitioning-in-oracle-standard-edition-part-2/>Implementing table partitioning in Oracle Standard Edition: Part 2</a>
+
 ## MySQL links
 
 <a href=https://blogs.oracle.com/mysql/why-your-application-should-not-use-one-mysql-user-for-everything>Why Your Application Should Not Use One MySQL User for Everything
