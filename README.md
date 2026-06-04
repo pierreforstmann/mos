@@ -28,9 +28,11 @@ scalability</a>
 <a href=https://www.oracle.com/security-alerts/#CriticalPatchUpdates>Critical Patch Updates</a>
 
 ### blogs
-<a href=https://blogs.oracle.com/coretec/>Database & Cloud Technology Blog</a>
+<a href=https://blogs.oracle.com/coretec/>Database & Cloud Technology Blog (coretec)</a>
 
 <a href=https://blogs.oracle.com/database/>Oracle Database <a/>
+
+<a href=https://blogs.oracle.com/sql/>All Things SQL</a>
 
 <a href=https://blogs.oracle.com/optimizer/>Oracle Optimizer</a>
 
