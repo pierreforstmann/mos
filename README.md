@@ -9,10 +9,10 @@ Here are some SQL scripts that I have first published on OTN forums using follow
 
 ## Oracle links
 
-### guides
+### Guides
 <a href=https://docs.oracle.com/en/database/oracle/oracle-database/19/adfns/database-development-guide.pdf>Database Development Guide</a>
 
-### white papers
+### White Papers
 
 <a href=https://download.oracle.com/ocomdocs/global/Application_Programming_Using_Pooling.pdf>Application Programming Using Pooling</a>
 
@@ -31,7 +31,7 @@ scalability</a>
 
 <a href=https://www.oracle.com/security-alerts/#CriticalPatchUpdates>Critical Patch Updates</a>
 
-### blogs
+### Blogs
 <a href=https://blogs.oracle.com/coretec/>Database & Cloud Technology Blog (coretec)</a>
 
 <a href=https://blogs.oracle.com/database/>Oracle Database <a/>
@@ -58,7 +58,7 @@ scalability</a>
 
 <a href=https://www.oracledaybyday.com/>Oracle DBA Scripts & Database Utilities </a>
 
-### blog posts
+### Blog Posts
 
 <a href=https://database-heartbeat.com/2023/04/18/create-service-ha/>How to create Oracle Database Services for High Availability</a>
 
@@ -84,6 +84,6 @@ scalability</a>
 
 <a href=https://aws.amazon.com/fr/blogs/database/implementing-table-partitioning-in-oracle-standard-edition-part-2/>Implementing table partitioning in Oracle Standard Edition: Part 2</a>
 
-## MySQL links
+## MySQL Links
 
 <a href=https://blogs.oracle.com/mysql/why-your-application-should-not-use-one-mysql-user-for-everything>Why Your Application Should Not Use One MySQL User for Everything
