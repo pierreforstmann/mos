@@ -54,6 +54,10 @@ scalability</a>
   
 <a href=https://dohdatabase.com/2025/03/25/patch-dg/>Introduction to Patching Oracle Data Guard<a/>
 
+<a href=https://blogs.oracle.com/optimizer/using-sql-patch-to-add-hints-to-a-packaged-application>Using SQL Patch to add hints to a packaged application</a>
+
+<a href=https://blogs.oracle.com/optimizer/adding-and-disabling-hints-using-sql-patch>Adding and Disabling Hits Using SQL Patch</a>
+
 <a href=https://www.pythian.com/blog/how-to-create-an-oracle-se2-database-and-avoid-licensing-problems>How To Create an Oracle SE2 Database and Avoid Licensing Problems</a>
 
 <a href=https://houseofbrick.com/blog/the-oracle-database-standard-edition-licensing-trap/>The Oracle Database Standard Edition Licensing Trap</a>
