@@ -23,6 +23,10 @@ scalability</a>
 
 <a href=https://www.oracle.com/technetwork/database/performance/statspack-opm4-134117.pdf> Diagnosing Performance Bottlenecks Using Statspack And The Oracle Performance Method
 
+<a href=https://www.oracle.com/technetwork/database/performance/statspack-tuning-otn-new-128500.pdf>Diagnosing Performance Problems Using Statspack</a>
+
+<a href=https://www.oracle.com/technetwork/database/performance/statspack-tuning-otn-new-128500.pdf>Performance Tuning with Statspack, Part II</a>
+
 ### Critical Patch Updates, Security Alerts and Bulletins
 
 <a href=https://www.oracle.com/security-alerts/#CriticalPatchUpdates>Critical Patch Updates</a>
@@ -62,7 +66,7 @@ scalability</a>
   
 <a href=https://dohdatabase.com/2025/03/25/patch-dg/>Introduction to Patching Oracle Data Guard<a/>
 
-<a href=https://connor-mcdonald.com/2019/03/04/less-slamming-vsql/>use V$SQLSTAT not V$SQL to find expensive SQL</a>
+<a href=https://connor-mcdonald.com/2019/03/04/less-slamming-vsql/>Use V$SQLSTAT not V$SQL to find expensive SQL</a>
 
 <a href=https://blogs.oracle.com/optimizer/using-sql-patch-to-add-hints-to-a-packaged-application>Using SQL Patch to add hints to a packaged application</a>
 
