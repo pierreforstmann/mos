@@ -23,7 +23,7 @@ scalability</a>
 
 <a href=https://www.oracle.com/technetwork/database/performance/statspack-opm4-134117.pdf> Diagnosing Performance Bottlenecks Using Statspack And The Oracle Performance Method
 
-<a href=https://www.oracle.com/technetwork/database/performance/statspack-tuning-otn-new-128500.pdf>Diagnosing Performance Problems Using Statspack</a>
+<a href=https://www.oracle.com/technetwork/database/performance/statspack-129989.pdf>Diagnosing Performance Problems Using Statspack</a>
 
 <a href=https://www.oracle.com/technetwork/database/performance/statspack-tuning-otn-new-128500.pdf>Performance Tuning with Statspack, Part II</a>
 
