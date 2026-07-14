@@ -58,6 +58,10 @@ scalability</a>
 
 <a href=https://www.oracledaybyday.com/>Oracle DBA Scripts & Database Utilities </a>
 
+<a href=https://carlos-sierra.net/>Carlos Sierra's Tools and Tips</a>
+
+<a href=https://github.com/carlos-sierra/cscripts/blob/master/coe_xfr_sql_profile.sql>coe_xfr_sql_profile.sql (without SQLTXPLAIN)</a>
+
 ### Blog Posts
 <a href=https://blogs.oracle.com/maa/the-high-availability-connection-string-explained>The High Availability Connection String Explained</a>
 
