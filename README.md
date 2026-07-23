@@ -93,6 +93,11 @@ scalability</a>
 
 <a href=https://github.com/oehrlis/oradba>oradba - Oracle Database Administration Toolset</a>
 
+<a href=https://dohdatabase.com/2023/02/10/patch-gi/>Patching Oracle Grid Infrastructure 19c – Beginner’s Guide</a>
+
+<a href=https://dohdatabase.com/2023/02/20/how-to-patch-oracle-grid-infrastructure-19c-using-in-place-opatchauto/>How To Patch Oracle Grid Infrastructure Using In-Place Opatchauto</a>
+
+
 ## MySQL Links
 
 <a href=https://blogs.oracle.com/mysql/why-your-application-should-not-use-one-mysql-user-for-everything>Why Your Application Should Not Use One MySQL User for Everything
