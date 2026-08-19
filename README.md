@@ -34,7 +34,9 @@ scalability</a>
 ### Blogs
 <a href=https://blogs.oracle.com/coretec/>Database & Cloud Technology Blog (coretec)</a>
 
-<a href=https://blogs.oracle.com/database/>Oracle Database <a/>
+<a href=https://blogs.oracle.com/database/>Oracle Database </a>
+
+<a href=https://blogs.oracle.com/security/>Oracle Security Blog</a>
 
 <a href=https://blogs.oracle.com/sql/>All Things SQL</a>
 
